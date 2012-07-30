@@ -1,0 +1,26 @@
+language: cpp
+compiler:
+  - gcc
+#  - clang
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install cmake
+  - cd ~/builds/KingPin/TrinityCore
+  - mkdir bin
+  - cd ~/builds/KingPin/TrinityCore/bin
+  - cmake ../ -DWITH_WARNINGS=0 -DWITH_COREDEBUG=0 -DUSE_COREPCH=1 -DUSE_SCRIPTPCH=1 -DTOOLS=1 -DSCRIPTS=1 -DSERVERS=1
+
+# Change this to your needs
+script: make
+
+notifications:
+  irc: 
+    channels:
+      - "irc.rizon.net#KPsNDen"
+    on_success: change
+    on_failure: always
+
+branches:
+  only:
+    - master
