@@ -5,7 +5,7 @@ compiler:
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install cmake
+  - sudo apt-get install build-essential autoconf libtool gcc g++ make cmake libace-dev openssl libssl-dev libmysqlclient15-dev libmysql++-dev libreadline6-dev zlib1g-dev libbz2-dev
   - cd ~/builds/KingPin/TrinityCore
   - mkdir bin
   - cd ~/builds/KingPin/TrinityCore/bin
